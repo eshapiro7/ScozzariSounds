@@ -1,8 +1,25 @@
 import React from "react";
-// If you installed FontAwesome via npm, uncomment these imports
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faInstagram, faTiktok, faYoutube, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { FaYoutube, FaTiktok } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
+import styled from "styled-components";
 
+// Styled component for the footer
+
+const FooterContainer = styled.footer`
+  background-color: #f0f0f0;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 20px;
+`;
+
+const IconWrapper = styled.div`
+  font-size: 24px;
+  margin: 10px;
+  display: inline-block;
+  &:hover {
+    cursor: pointer;
+  }
+`;
 const styles = {
   footer: {
     backgroundColor: "black",
@@ -18,49 +35,27 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
   },
-  socialLinkItem: {
-    margin: "0 10px",
-  },
-  link: {
-    color: "#fff",
-    textDecoration: "none",
-    fontSize: "24px", // Adjust size as needed
-  },
 };
 
 const Footer = () => {
   return (
-    <footer className="footer" style={styles.footer}>
-      <ul style={styles.socialLinks}>
-        <li style={styles.socialLinkItem}>
-          <a
-            href="https://instagram.com"
-            style={styles.link}
-            aria-label="Instagram"
-          >
-            {/* If using FontAwesome via npm */}
-            {/* <FontAwesomeIcon icon={faInstagram} /> */}
-            <i className="fab fa-instagram"></i>
-          </a>
-        </li>
-        <li style={styles.socialLinkItem}>
-          <a href="https://tiktok.com" style={styles.link} aria-label="TikTok">
-            {/* <FontAwesomeIcon icon={faTiktok} /> */}
-            <i className="fab fa-tiktok"></i>
-          </a>
-        </li>
-        <li style={styles.socialLinkItem}>
-          <a
-            href="https://youtube.com"
-            style={styles.link}
-            aria-label="YouTube"
-          >
-            {/* <FontAwesomeIcon icon={faYoutube} /> */}
-            <i className="fab fa-youtube"></i>
-          </a>
-        </li>
-      </ul>
-    </footer>
+    <>
+      <FooterContainer className="footer-style">
+        <hr />
+        <p>
+          scozzarisounds@gmail.com <br /> 860-202-7665
+        </p>
+        <IconWrapper>
+          <FaYoutube color="red" />
+        </IconWrapper>
+        <IconWrapper>
+          <FaTiktok color="black" />
+        </IconWrapper>
+        <IconWrapper>
+          <FcGoogle />
+        </IconWrapper>
+      </FooterContainer>
+    </>
   );
 };
 
