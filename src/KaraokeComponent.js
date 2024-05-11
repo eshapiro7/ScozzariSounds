@@ -5,7 +5,7 @@ import karapic from "./img/karaokepage.jpeg";
 const Karaoke = () => {
   return (
     <>
-      <h2 className="component-title">All the songs you love</h2>
+      <h2 className="component-title">Next Level Karaoke</h2>
       <div className="container">
         <img
           src={karapic}
