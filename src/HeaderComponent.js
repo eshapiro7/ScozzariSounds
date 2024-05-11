@@ -76,7 +76,7 @@ const ContactButton = styled.button`
 const Header = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [showMenu, setShowMenu] = useState(true); // Initially true to show on medium to xl screens
+  const [showMenu, setShowMenu] = useState(false); // Initially true to show on medium to xl screens
 
   const toggleModal = () => setModalIsOpen(!modalIsOpen);
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
@@ -118,9 +118,10 @@ const Header = () => {
           </DropdownMenu>
         </Dropdown>
         <NavLink to="/testimonials">Testimonials</NavLink>
-        <ContactButton className="contact-button" onClick={openModal}>
+        <NavLink className="contact-button" onClick={openModal}>
+          {" "}
           Schedule a Call
-        </ContactButton>
+        </NavLink>
       </Nav>
       <CalendlyEmbed
         isOpen={modalIsOpen}
