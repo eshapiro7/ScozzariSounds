@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import "./App.css";
 import Header from "./HeaderComponent";
 import Home from "./HomeComponent";
@@ -14,21 +14,17 @@ function Main() {
     <>
       <Header />
       <Switch>
-        <Route path="/home">
-          <Home />
-        </Route>
+        <Route exact path="/" component={Home} />
+        <Route path="/home" component={Home} />
         <Route path="/band" component={Band} />
         <Route path="/karaoke" component={Karaoke} />
         <Route path="/DJ" component={DJ} />
-        <Route path="/testimonials">
-          <Testimonials />
-        </Route>
-        <Route path="/https://calendly.com/dane-scozzari/30min">
-          <a
-            href="https://calendly.com/dane-scozzari/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-          ></a>
+        <Route path="/testimonials" component={Testimonials} />
+        {/* Handling external link directly */}
+        <Route path="/calendly">
+          <Redirect
+            to={{ pathname: "https://calendly.com/dane-scozzari/30min" }}
+          />
         </Route>
         <Redirect to="/home" />
       </Switch>
